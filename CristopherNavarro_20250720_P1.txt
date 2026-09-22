@@ -1,0 +1,74 @@
+================================================================================
+INSTITUTO TECNOLÓGICO DE LAS AMÉRICAS (ITLA)
+ASIGNATURA: SEGURIDAD DE REDES
+DOCENTE: JONATHAN ESTEBAN RONDÓN CORNIEL
+ENTREGA OFICIAL: TAREA SEMANA 2 (PRÁCTICA 1) - TAREA #2
+================================================================================
+
+DATOS DEL ESTUDIANTE:
+- Nombre Completo: Cristopher Navarro
+- Matrícula: 2025-0720
+- Correo Institucional: 20250720@itla.edu.do
+- Fecha de Entrega: Septiembre 2026
+
+--------------------------------------------------------------------------------
+ENLACES DE ENTREGA:
+--------------------------------------------------------------------------------
+1. ENLACE AL REPOSITORIO DE GITHUB:
+   https://github.com/CristopherNavarro/Tarea2_SeguridadRedes_CristopherNavarro_20250720
+
+2. ENLACE AL VIDEO DEMOSTRATIVO EN YOUTUBE (Máx. 10 Minutos):
+   https://youtu.be/PENDIENTE_GRABACION
+
+--------------------------------------------------------------------------------
+RESUMEN EJECUTIVO DE LA IMPLEMENTACIÓN TÉCNICA:
+--------------------------------------------------------------------------------
+En esta práctica implementé un esquema completo de seguridad y hardening de 
+redes simulado en GNS3 con backend en VMware Workstation Pro 17:
+
+1. DIRECCIONAMIENTO BASADO EN MATRÍCULA (2025-0720):
+   - Prefijo base calculado: 10.25.72.0
+   - VLAN 10 (Usuarios): 10.25.72.0/25 (Gateway 10.25.72.1, DHCP 10.25.72.10-100)
+   - VLAN 20 (Servidores): 10.25.72.128/28 (Gateway 10.25.72.129)
+     * Servidor Web: 10.25.72.130/28 (HTTP:80 / HTTPS:443)
+     * Servidor BD: 10.25.72.131/28 (MySQL:3306)
+   - Salida WAN / Internet vía NAT en FortiGate (port1 hacia nodo NAT).
+
+2. HARDENING DE CAPA 2 EN SWITCH CISCO (SW1-Cisco-IOSvL2):
+   - Segmentación en VLANs 10, 20 y 99 (Nativa/Parking).
+   - Troncal 802.1Q en Gi0/0 permitiendo únicamente VLANs 10 y 20.
+   - Port-Security en interfaces de acceso (Gi1/1, Gi2/1, Gi3/1) en modo 'restrict'
+     con aprendizaje dinámico permanente ('mac-address sticky') y límite de 2 MACs.
+   - Spanning-Tree PortFast y BPDU Guard activados en interfaces de acceso.
+   - DHCP Snooping operativo en VLAN 10 con Gi0/0 configurado como 'trusted' y 
+     desactivación de inserción de Option 82.
+   - Interfaces no utilizadas asociadas a VLAN 99 y apagadas administrativamente.
+   - Contraseña de modo privilegiado cifrada con enable secret (Itla2025*) y banner MOTD.
+
+3. FIREWALL NEXT-GENERATION FORTIGATE (FortiGate-7.0.9):
+   - Subinterfaces enrutadas 802.1Q en port2 (port2.10 y port2.20).
+   - Servidor DHCP entregando configuración a la red de usuarios.
+   - Ruta estática por defecto (0.0.0.0/0) apuntando a WAN con NAT activado.
+   - Política 1 (USERS_TO_WEB_HTTPS): Tráfico de Usuarios a Servidor Web permitido 
+     en HTTP y HTTPS con inspección profunda (DPI) y modo proxy.
+   - Política 2 (BLOCK_USERS_TO_DB): Tráfico de Usuarios al Servidor de Base de 
+     Datos (puerto 3306) bloqueado terminantemente.
+   - Política 3 (WEB_TO_DB_MYSQL): Comunicación autorizada entre Servidor Web y 
+     Servidor de Base de Datos en puerto 3306 (MySQL).
+   - Firma personalizada de IPS #2581 (SQLI_PAYLOAD) que detecta patrones de SQLi 
+     en el URI HTTP, cancela la sesión (DROP_SESSION) y coloca al host atacante 
+     en CUARENTENA AUTOMÁTICA durante 10 minutos.
+   - Perfil de filtrado de archivos (file-filter y webfilter) bloqueando descargas 
+     de ejecutables (.exe, .bat, .elf) respondiendo con HTTP 403 Forbidden.
+   - Política DoS IPv4 (RATE_LIMIT_DOS) mitigando flooding SYN, UDP, ICMP y limitando
+     sesiones concurrentes.
+
+4. VALIDACIÓN DE PRUEBAS (100% SUPERADAS):
+   - Concesión DHCP en PC1 verificada (IP 10.25.72.10).
+   - Acceso Web desde PC1 con respuesta HTTP 200 OK y banner legítimo.
+   - Bloqueo de PC1 hacia Base de Datos confirmado (Operation timed out).
+   - Acceso de Servidor Web a BD confirmado con recepción de banner MySQL.
+   - Disparo de regla IPS por inyección SQL confirmado y registro de IP en cuarentena.
+   - Bloqueo de descarga de archivo .exe confirmado con código HTTP 403 Forbidden.
+   - Hardening L2 verificado en switch con comandos show.
+================================================================================
