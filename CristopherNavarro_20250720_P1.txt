@@ -71,4 +71,14 @@ redes simulado en GNS3 con backend en VMware Workstation Pro 17:
    - Disparo de regla IPS por inyección SQL confirmado y registro de IP en cuarentena.
    - Bloqueo de descarga de archivo .exe confirmado con código HTTP 403 Forbidden.
    - Hardening L2 verificado en switch con comandos show.
+
+5. ESTRUCTURA DE ARCHIVOS EN REPOSITORIO DE GITHUB:
+   - README.md: Documentación completa, matrices de direccionamiento y rúbrica.
+   - Memoria_Tecnica_Seguridad_Redes_CristopherNavarro_20250720.md: Informe académico.
+   - CristopherNavarro_20250720_P1.txt: Este documento de sustentación y entrega.
+   - topologia/Tarea2_SeguridadRedes_CristopherNavarro_20250720.gns3: Topología nativa GNS3.
+   - topologia/INSTRUCCIONES_IMPORTACION_TOPOLOGIA.md: Guía de importación.
+   - configs/SW1_Cisco_running_config.txt: Respaldo de configuración de switch Cisco.
+   - configs/FortiGate_config_backup.conf: Respaldo completo de configuración FortiOS.
+   - configs/hosts_services_config.sh: Script de aprovisionamiento de hosts.
 ================================================================================
