@@ -229,12 +229,12 @@ By using the software, you agree to abide by the terms and conditions of the Cis
 banner motd ^C ACCESO RESTRINGIDO - TAREA 2 CRISTOPHER NAVARRO 2025-0720 ^C
 !
 line con 0
- exec-timeout 15 0
- password 7 072635404F5B49574258
- login
+ exec-timeout 0 0
+ logging synchronous
 line aux 0
 line vty 0 4
- exec-timeout 15 0
+ exec-timeout 0 0
+ logging synchronous
  password 7 132C031E0A5E54787E6E
  login
  transport input telnet ssh
