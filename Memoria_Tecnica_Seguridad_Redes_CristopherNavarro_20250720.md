@@ -298,7 +298,8 @@ A continuación detallo las pruebas realizadas directamente en vivo en los equip
 ## 8. Recursos de Entrega y Enlaces
 
 - **Repositorio de Código y Configuraciones:** `https://github.com/CristopherNavarro/Tarea2_SeguridadRedes_CristopherNavarro_20250720` *(Repositorio GitHub oficial)*
-- **Video Demostrativo de la Práctica (YouTube):** `https://youtu.be/...` *(Enlace del video demostrativo grabado por el estudiante)*
+- **Video Demostrativo de la Práctica (YouTube):** [https://youtu.be/D6_CbY_dutE](https://youtu.be/D6_CbY_dutE) *(Grabación en primera persona; audio normalizado con videocandy.com para compensar bajo volumen del micrófono).*
 - **Topología de Red GNS3:** `topologia/Tarea2_SeguridadRedes_CristopherNavarro_20250720.gns3`
+- **Especificaciones del Video Demostrativo:** `Video/README.md`
 - **Archivos de Configuración y Respaldos:** `configs/SW1_Cisco_running_config.txt`, `configs/FortiGate_config_backup.conf` y `configs/hosts_services_config.sh`
 
