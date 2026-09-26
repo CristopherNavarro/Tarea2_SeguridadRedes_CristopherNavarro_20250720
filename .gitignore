@@ -1,0 +1,14 @@
+# Git Ignore for Network Deliverables Repository
+# Student: Cristopher Navarro (2025-0720)
+
+# Large media files (videos hosted externally on YouTube)
+*.mp4
+Video/*.mp4
+Video/*.mov
+Video/*.avi
+
+# Temporary files
+*.tmp
+*~
+.DS_Store
+Thumbs.db
