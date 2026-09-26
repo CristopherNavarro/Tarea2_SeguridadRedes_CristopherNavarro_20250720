@@ -15,8 +15,12 @@
 
 ## Enlace al Video Demostrativo
 
-- **Video Explicativo en YouTube:** [Ver Demostración en YouTube](https://youtu.be/PENDIENTE_GRABACION)  
-*(Grabación técnica de máximo 10 minutos cumpliendo con todos los lineamientos: presentación de rostro, voz, fecha y hora en tiempo real, recorrido de topología y validación en vivo de cada comando).*
+- **Video Explicativo en YouTube:** [Ver Demostración Técnica en YouTube (HD)](https://youtu.be/D6_CbY_dutE)  
+*(Grabación técnica en primera persona cumpliendo con todos los lineamientos de la rúbrica: rostro visible en cámara web, voz clara, fecha y hora del sistema en tiempo real, recorrido de la topología en GNS3 y validación de comandos en vivo).*
+
+> [!NOTE]
+> **Nota Aclaratoria sobre el Procesamiento de Audio:**  
+> Durante la captura inicial, el micrófono grabó la pista de voz con un volumen excesivamente bajo. Para asegurar que la sustentación técnica se escuche con óptima claridad y volumen adecuado para la evaluación docente, utilicé la herramienta *videocandy.com* exclusivamente para la amplificación y ganancia del audio antes de su publicación en YouTube. Por tal motivo, el video resultante muestra una discreta marca de agua en la esquina inferior derecha derivada de dicho procesamiento de sonido.
 
 ---
 
@@ -128,6 +132,8 @@ Para dar estricto cumplimiento a la pauta de direccionamiento en base a matrícu
 ├── topologia/
 │   ├── Tarea2_SeguridadRedes_CristopherNavarro_20250720.gns3  <- Archivo de topología nativo para GNS3
 │   └── INSTRUCCIONES_IMPORTACION_TOPOLOGIA.md                 <- Guía de importación para el profesor
+├── Video/
+│   └── README.md                                              <- Especificaciones técnicas del video y nota de audio
 └── configs/
     ├── SW1_Cisco_running_config.txt                           <- Respaldo de configuración activa de Cisco SW1
     ├── FortiGate_config_backup.conf                           <- Respaldo de configuración completa de FortiOS
