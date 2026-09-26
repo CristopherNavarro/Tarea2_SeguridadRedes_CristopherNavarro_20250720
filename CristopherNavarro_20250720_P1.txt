@@ -18,7 +18,16 @@ ENLACES DE ENTREGA:
    https://github.com/CristopherNavarro/Tarea2_SeguridadRedes_CristopherNavarro_20250720
 
 2. ENLACE AL VIDEO DEMOSTRATIVO EN YOUTUBE (Máx. 10 Minutos):
-   https://youtu.be/PENDIENTE_GRABACION
+   https://youtu.be/D6_CbY_dutE
+
+   NOTA ACLARATORIA SOBRE EL AUDIO DEL VIDEO:
+   Profesor Jonathan Rondón, durante la grabación inicial el micrófono capturó
+   el audio con un volumen sumamente bajo. Para asegurar que cada una de mis
+   explicaciones técnicas se escuche con absoluta claridad y volumen adecuado
+   para su calificación, utilicé la herramienta videocandy.com para amplificar
+   la ganancia de la pista de voz antes de subir el video a YouTube. Debido a
+   dicho procesamiento de volumen, el video presenta una pequeña marca de agua
+   en la esquina inferior derecha proveniente de dicha herramienta de sonido.
 
 --------------------------------------------------------------------------------
 RESUMEN EJECUTIVO DE LA IMPLEMENTACIÓN TÉCNICA:
@@ -78,6 +87,7 @@ redes simulado en GNS3 con backend en VMware Workstation Pro 17:
    - CristopherNavarro_20250720_P1.txt: Este documento de sustentación y entrega.
    - topologia/Tarea2_SeguridadRedes_CristopherNavarro_20250720.gns3: Topología nativa GNS3.
    - topologia/INSTRUCCIONES_IMPORTACION_TOPOLOGIA.md: Guía de importación.
+   - Video/README.md: Especificaciones técnicas del video y nota de procesamiento de audio.
    - configs/SW1_Cisco_running_config.txt: Respaldo de configuración de switch Cisco.
    - configs/FortiGate_config_backup.conf: Respaldo completo de configuración FortiOS.
    - configs/hosts_services_config.sh: Script de aprovisionamiento de hosts.
