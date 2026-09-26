@@ -125,6 +125,9 @@ Para dar estricto cumplimiento a la pauta de direccionamiento en base a matrícu
 ├── README.md                                                  <- Portada oficial y resumen del proyecto
 ├── Memoria_Tecnica_Seguridad_Redes_CristopherNavarro_20250720.md <- Documento técnico académico completo
 ├── CristopherNavarro_20250720_P1.txt                          <- Archivo de entrega oficial para plataforma
+├── topologia/
+│   ├── Tarea2_SeguridadRedes_CristopherNavarro_20250720.gns3  <- Archivo de topología nativo para GNS3
+│   └── INSTRUCCIONES_IMPORTACION_TOPOLOGIA.md                 <- Guía de importación para el profesor
 └── configs/
     ├── SW1_Cisco_running_config.txt                           <- Respaldo de configuración activa de Cisco SW1
     ├── FortiGate_config_backup.conf                           <- Respaldo de configuración completa de FortiOS
